@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ExpenseItem } from "./expense-monitor/feature-expense-item/expense-item";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const mockDataExpenses = [
+    {
+      id: 1,
+      title: "Hostel Rent",
+      amount: "10000 INR",
+      date: new Date(2023, 6, 14),
+    },
+    {
+      id: 2,
+      title: "Mess Fees",
+      amount: "5000 INR",
+      date: new Date(2023, 6, 18),
+    },
+    {
+      id: 3,
+      title: "Petrol",
+      amount: "3000 INR",
+      date: new Date(2023, 6, 20),
+    },
+  ];
+  return(
+    <div>
+      My Expense List
+       <ExpenseItem myExpenses={mockDataExpenses} />
     </div>
   );
 }

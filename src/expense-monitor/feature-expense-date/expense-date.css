@@ -1,0 +1,21 @@
+/* expense-date.module.css */
+
+.expense-date {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; /* Roboto Medium */
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .month {
+    color: #007bff; /* Blue color */
+  }
+  
+  .date {
+    color: #333; /* Dark gray color */
+  }
+  
+  .year {
+    color: #555; /* Medium gray color */
+  }
+  
