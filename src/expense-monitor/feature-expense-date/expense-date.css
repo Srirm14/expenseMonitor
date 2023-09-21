@@ -2,20 +2,30 @@
 
 .expense-date {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500; /* Roboto Medium */
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+    border-radius: 12px;
+    border: 2px solid #ffffff;
     padding: 10px;
+    color: #fff;
+    height:45 px;
+    width: 65px;
+    margin: 0 auto; /* Center horizontally using margin */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .month {
-    color: #007bff; /* Blue color */
+    color: #ffffff; /* Blue color */
   }
   
   .date {
-    color: #333; /* Dark gray color */
+    color: #ffffff; /* Dark gray color */
   }
   
   .year {
-    color: #555; /* Medium gray color */
+    color: #ffffff; /* Medium gray color */
   }
   

@@ -1,8 +1,9 @@
 import "./App.css";
+import { useState } from "react";
 import { ExpenseItem } from "./expense-monitor/feature-expense-item/expense-item";
-
+import { ExpenseAdd } from "./expense-monitor/feature-expense-add/expense-add";
 function App() {
-  const mockDataExpenses = [
+  const initialexpenseState = [
     {
       id: 1,
       title: "Hostel Rent",
@@ -22,10 +23,22 @@ function App() {
       date: new Date(2023, 6, 20),
     },
   ];
-  return(
-    <div>
+  const [expenseData, setExpenseData] = useState(initialexpenseState);
+
+  const addedExpenseHandler = (addedExpenses) => {
+    setExpenseData((prevState)=>{
+      return [...prevState,addedExpenses];
+    });
+    console.log(expenseData);
+  };
+
+  return (
+    <div className="app-bg-standard">
       My Expense List
-       <ExpenseItem myExpenses={mockDataExpenses} />
+      <div className="expense-add">
+        <ExpenseAdd onAddExpenses={addedExpenseHandler} />
+      </div>
+      <ExpenseItem myExpenses={expenseData} />
     </div>
   );
 }

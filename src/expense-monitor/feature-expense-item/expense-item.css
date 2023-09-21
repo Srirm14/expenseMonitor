@@ -1,32 +1,70 @@
+.expense-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #007bff, #0099cc); /* Gradient from blue to light blue */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #fff; /* White text color */
+  min-width: 600px; /* Minimum width of 600px */
+}
+.expense-details {
+  display: flex;
+  align-items: center;
+}
+
+.expense-title,
+.expense-amount {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500; /* Roboto Medium */
+  margin: 0 5px; /* Add margin to separate title and amount */
+}
+
+.expense-amount {
+  font-size: 1.2em; /* Increase font size for amount */
+}
+
 /* expense-item.module.css */
 
-.expense-item-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #007bff, #0099cc); /* Gradient from blue to light blue */
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    color: #fff; /* White text color */
+/* Base styles for larger screens */
+.expense-item-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 100px; /* Padding on all sides */
+  /* You can add additional styling if needed */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .expense-item-wrapper {
+    padding: 20px; /* Adjust padding for smaller screens */
+    max-width: 90%; /* Set a maximum width for smaller screens */
   }
-  
-  .expense-details {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .expense-title {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500; /* Roboto Medium */
-    margin-bottom: 5px;
-  }
-  
-  .expense-amount {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500; /* Roboto Medium */
-    font-size: 1.2em; /* Increase font size for amount */
-  }
-  
+}
+
+/* button.css */
+
+/* Base button styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #b969ff, #4c0ac7); /* Gradient from purple to indigo */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover state - Change color on hover */
+.button:hover {
+  background: linear-gradient(to bottom, #4b0082, #800080); /* Gradient from indigo to purple on hover */
+}
+
+/* Active state - Change color on click */
+.button:active {
+  background: linear-gradient(to bottom, #464246, #4b0082); /* Gradient from purple to indigo on click */
+}
