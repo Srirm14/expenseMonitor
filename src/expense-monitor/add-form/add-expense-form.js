@@ -5,7 +5,8 @@ export default function AddExpenseForm(props) {
   const [title, setTitle] = useState("");
   const [amount, setamount] = useState("");
   const [date, setDate] = useState("");
-
+  const [expenseOverlay, setExpenseOverlay] = useState(false);
+  
   const titleUpdation = (event) => {
     setTitle(event.target.value);
   };
@@ -16,7 +17,7 @@ export default function AddExpenseForm(props) {
     setDate(event.target.value);
   };
 
-  const [expenseOverlay, setExpenseOverlay] = useState(false);
+
 
   const myExpensesUpdation = (event) => {
     event.preventDefault();

@@ -1,11 +1,9 @@
 import "./expense-filter.css";
-
 export default function ExpenseFilter(props) {
   const filterHandler = (event) => {
     props.onChangeDateFilter(event.target.value);
   };
-
-  return (
+  return ( 
     <div className="expense-filter">
       <div>
         <span>Filter by year</span>
@@ -21,5 +19,6 @@ export default function ExpenseFilter(props) {
         </select>
       </div>
     </div>
+
   );
 }

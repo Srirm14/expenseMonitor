@@ -2,19 +2,22 @@ import "./App.css";
 import { useState } from "react";
 import { ExpenseItem } from "./expense-monitor/feature-expense-item/expense-item";
 import { ExpenseAdd } from "./expense-monitor/feature-expense-add/expense-add";
+import ExpenseMonitorList from './expense-monitor/expense-monitor-list';
+
+
 function App() {
   const initialexpenseState = [
     {
       id: 1,
       title: "Hostel Rent",
       amount: "10000 INR",
-      date: new Date(2020, 6, 14),
+      date: new Date(2020, 9, 14),
     },
     {
       id: 2,
       title: "Mess Fees",
       amount: "5000 INR",
-      date: new Date(2021, 6, 18),
+      date: new Date(2021, 3, 18),
     },
     {
       id: 3,
@@ -32,26 +35,28 @@ function App() {
       id: 5,
       title: "shoes",
       amount: "800 INR",
-      date: new Date(2023, 6, 20),
+      date: new Date(2023, 1, 20),
     },
   ];
   const [expenseData, setExpenseData] = useState(initialexpenseState);
 
   const addedExpenseHandler = (addedExpenses) => {
-    setExpenseData((prevState)=>{
-      return [...prevState,addedExpenses];
+    setExpenseData((prevState) => {
+      return [...prevState, addedExpenses];
     });
     console.log(expenseData);
   };
 
   return (
-    <div className="app-bg-standard">
-      My Expense List
-      <div className="expense-add">
-        <ExpenseAdd onAddExpenses={addedExpenseHandler} />
+    <ExpenseMonitorList>
+      <div className="app-bg-standard">
+        <div class="header">Expense List</div>
+        <div className="expense-add">
+          <ExpenseAdd onAddExpenses={addedExpenseHandler} />
+        </div>
+        <ExpenseItem myExpenses={expenseData} />
       </div>
-      <ExpenseItem myExpenses={expenseData} />
-    </div>
+    </ExpenseMonitorList>
   );
 }
 

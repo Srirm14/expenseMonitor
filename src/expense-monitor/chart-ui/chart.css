@@ -1,0 +1,18 @@
+/* chart.css */
+
+.chart {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #689cc5;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+  width: 660px;
+  margin-top: 20px;
+}
+
+/* Add spacing between ChartBars */
+.chart-bar {
+  margin-right: 30px; /* Adjust the margin-right value as needed */
+}
