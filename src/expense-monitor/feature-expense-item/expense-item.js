@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ExpenseDate from "../feature-expense-date/expense-date";
 import ExpenseFilter from "../feature-expense-filter/expense-filter";
 import Card from "../ui-elements/card";
-import { map, filter } from "rxjs/operators";
 import "./expense-item.css";
 
 export function ExpenseItem(props) {
@@ -10,7 +9,17 @@ export function ExpenseItem(props) {
 
   const hiddenDates = ["2019", "2020", "2021", "2022", "2023"];
 
-  const filteredHiddenDates = hiddenDates.filter((date) => date !== filteredDate);
+  const filteredHiddenDates = hiddenDates.filter(
+    (date) => date !== filteredDate
+  );
+
+  const filteredExpense = props.myExpenses.filter((expenses) => {
+    if (filteredDate !== "Show All") {
+      return expenses.date.getFullYear().toString() === filteredDate;
+    } else {
+      return true;
+    }
+  });
 
   const dateFilterHandler = (selectedDate) => {
     setFilteredDate(selectedDate);
@@ -32,9 +41,8 @@ export function ExpenseItem(props) {
         are hidden.
       </p>
       <div className="expense-item-wrapper">
-        {props.myExpenses.pipe(
-          filter((expense) => expense.date === filteredDate),
-          map((expense, index) => (
+        {filteredExpense.length ? (
+          filteredExpense.map((expense, index) => (
             <div key={index} className={"expense-item-container"}>
               <div className={"expense-details"}>
                 <ExpenseDate dateOfExpense={expense.date} />
@@ -47,6 +55,10 @@ export function ExpenseItem(props) {
               </div>
             </div>
           ))
+        ) : (
+          <div>
+            <p> There are no expenses made on the selected year.</p>
+          </div>
         )}
       </div>
     </Card>

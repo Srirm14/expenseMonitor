@@ -8,18 +8,30 @@ function App() {
       id: 1,
       title: "Hostel Rent",
       amount: "10000 INR",
-      date: new Date(2023, 6, 14),
+      date: new Date(2020, 6, 14),
     },
     {
       id: 2,
       title: "Mess Fees",
       amount: "5000 INR",
-      date: new Date(2023, 6, 18),
+      date: new Date(2021, 6, 18),
     },
     {
       id: 3,
       title: "Petrol",
       amount: "3000 INR",
+      date: new Date(2022, 6, 20),
+    },
+    {
+      id: 4,
+      title: "eggs",
+      amount: "300 INR",
+      date: new Date(2022, 6, 20),
+    },
+    {
+      id: 5,
+      title: "shoes",
+      amount: "800 INR",
       date: new Date(2023, 6, 20),
     },
   ];

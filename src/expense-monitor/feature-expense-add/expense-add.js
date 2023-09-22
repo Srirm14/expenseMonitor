@@ -14,6 +14,7 @@ export function ExpenseAdd(props) {
 
   return (
     <div className="form-card-container">
+
       <AddExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
