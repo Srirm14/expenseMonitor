@@ -42,15 +42,17 @@ function App() {
 
   const addedExpenseHandler = (addedExpenses) => {
     setExpenseData((prevState) => {
-      return [...prevState, addedExpenses];
+      const updatedList = [...prevState];
+      updatedList.unshift(addedExpenses);
+      return updatedList;
     });
-    console.log(expenseData);
   };
+  
 
   return (
     <ExpenseMonitorList>
       <div className="app-bg-standard">
-        <div class="header">Expense List</div>
+        <div className="header">Expense List</div>
         <div className="expense-add">
           <ExpenseAdd onAddExpenses={addedExpenseHandler} />
         </div>

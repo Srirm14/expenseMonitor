@@ -1,6 +1,7 @@
-import "./card.css";
+import React from 'react';
+import CardContainer from './card-ui'; 
+
 export default function Card(props) {
-    
-    const classes = 'card-container ' + props.className;
-  return <div className={classes}> {props.children}</div>;
+  const classes =  props.className;
+  return <CardContainer className={classes}>{props.children}</CardContainer>;
 }

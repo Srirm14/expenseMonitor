@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.chart-bar__inner {
+.chartBarInner {
   height: 100%;
   width: 100%;
   border: 2px solid #000000;
@@ -21,13 +21,13 @@
   justify-content: flex-end;
 }
 
-.chart-bar__fill {
+.chartBarFill {
   background-color: #0076ce;
   width: 100%;
   transition: all 0.3s ease-out;
 }
 
-.chart-bar__label {
+.chartBarLabel {
   font-weight: bold;
   font-size: 0.5rem;
   text-align: center;
