@@ -15,7 +15,7 @@ function App() {
     },
     {
       id: 2,
-      title: "Mess Fees",
+      title: "Mess Feeses",
       amount: "5000 INR",
       date: new Date(2021, 3, 18),
     },
@@ -27,7 +27,7 @@ function App() {
     },
     {
       id: 4,
-      title: "eggs",
+      title: "egg",
       amount: "300 INR",
       date: new Date(2022, 6, 20),
     },
